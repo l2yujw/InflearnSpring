@@ -1,4 +1,6 @@
-﻿# SpringSetting
+## 김영한님의 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술
+
+ # SpringSetting
 
 # 사전 세팅
 Java 17 이상 설치 (IntelliJ에서도 세팅 가능)

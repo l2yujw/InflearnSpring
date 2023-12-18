@@ -8,3 +8,6 @@
 
     * ctrl + shift + /
         /**/ 형식의 주석
+
+    * ctrl + alt + n (Mac command + option + n)
+        -Inline

@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -17,7 +18,7 @@ public class SpringConfig {
         this.dataSource = dataSource;
     }*/
 
-    private EntityManager em;
+//    private EntityManager em;
 
     private final MemberRepository memberRepository;
 

@@ -32,6 +32,7 @@ configurations {
 		extendsFrom annotationProcessor
 	}
 }
+//setting -> Compiler -> annotation -> ennabled annotation 체크
 
 tasks.named('test') {
 	useJUnitPlatform()

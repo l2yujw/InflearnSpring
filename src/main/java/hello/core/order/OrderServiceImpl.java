@@ -1,18 +1,13 @@
 package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDicountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemberService;
-import hello.core.member.MemoryMemberRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor //final 붙은 변수로 생성자를 만들어 줌
+//@RequiredArgsConstructor //final 붙은 변수로 생성자를 만들어 줌
 public class OrderServiceImpl implements OrderService {
 
 /*
@@ -30,6 +25,7 @@ public class OrderServiceImpl implements OrderService {
 */
 
 /*
+
     private MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
 
@@ -48,10 +44,11 @@ public class OrderServiceImpl implements OrderService {
     }
 */
 
+//lombok
+/*
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-/*
 
 //    @Autowired //생략 가능
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -72,6 +69,21 @@ public class OrderServiceImpl implements OrderService {
         this.discountPolicy = discountPolicy;
     }
 */
+
+/*
+//@Autowired로 변수명 변경해서 매핑 해주는 방식인데 gradle로 컴파일 방식을 변경해도 인식이 안됌
+//spring 3.2x 부터는 @primary나 @Qualifier를 사용해야 할거 같음
+*/
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+
+    @Autowired //생략 가능
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = rateDiscountPolicy;
+//        System.out.println("memberRepository = " + memberRepository + ", discountPolicy = " + discountPolicy);
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

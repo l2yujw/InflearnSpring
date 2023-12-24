@@ -3,7 +3,7 @@ package hello.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean , DisposableBean {
+public class NetworkClient {
 
     private String url;
 
@@ -27,6 +27,19 @@ public class NetworkClient implements InitializingBean , DisposableBean {
         System.out.println("close " + url);
     }
 
+    public void init() throws Exception {
+        System.out.println("NetworkClient.init");
+        connect();
+        call("초기화 연결 메시지");
+    }
+
+    public void close() throws Exception {
+        System.out.println("NetworkClient.close");
+        disconnect();
+    }
+
+//InitializingBean , DisposableBean
+/*
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("NetworkClient.afterPropertiesSet");
@@ -38,5 +51,5 @@ public class NetworkClient implements InitializingBean , DisposableBean {
     public void destroy() throws Exception {
         System.out.println("NetworkClient.destroy");
         disconnect();
-    }
+    }*/
 }

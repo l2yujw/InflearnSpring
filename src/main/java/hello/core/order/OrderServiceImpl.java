@@ -4,6 +4,7 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -73,19 +74,34 @@ public class OrderServiceImpl implements OrderService {
 //RateDiscount인데 RateDicount로 되어 있었음
 //절대 자신을 의심하고 프로그램을 믿어!!
 /*
-//@Autowired로 변수명 변경해서 매핑 해주는 방식인데 gradle로 컴파일 방식을 변경해도 인식이 안됌
-//spring 3.2x 부터는 @primary나 @Qualifier를 사용해야 할거 같음
+    @Autowired로 변수명 변경해서 매핑 해주는 방식인데 gradle로 컴파일 방식을 변경해도 인식이 안됌
+    spring 3.2x 부터는 @primary나 @Qualifier를 사용해야 할거 같음
+
+    생성자 파라미터에 직접 rateDiscountPolicy를 넣어주는 방식에 대한 내용
+*/
+
+//@Qualifier 중복해결
+/*
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    @Autowired //생략 가능
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+//        System.out.println("memberRepository = " + memberRepository + ", discountPolicy = " + discountPolicy);
+    }
 */
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-
     @Autowired //생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = rateDiscountPolicy;
+        this.discountPolicy = discountPolicy;
 //        System.out.println("memberRepository = " + memberRepository + ", discountPolicy = " + discountPolicy);
     }
+
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

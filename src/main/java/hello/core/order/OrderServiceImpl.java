@@ -70,6 +70,8 @@ public class OrderServiceImpl implements OrderService {
     }
 */
 
+//RateDiscount인데 RateDicount로 되어 있었음
+//절대 자신을 의심하고 프로그램을 믿어!!
 /*
 //@Autowired로 변수명 변경해서 매핑 해주는 방식인데 gradle로 컴파일 방식을 변경해도 인식이 안됌
 //spring 3.2x 부터는 @primary나 @Qualifier를 사용해야 할거 같음

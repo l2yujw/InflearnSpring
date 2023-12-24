@@ -46,13 +46,10 @@ public class OrderServiceImpl implements OrderService {
         this.discountPolicy = discountPolicy;
     }*/
 
-    //    @Autowired //생성자가 하나 일 때는 생략 가능
-
-
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
+//    @Autowired //생략 가능
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

@@ -20,6 +20,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+//lombok 설정 추가 시작
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }

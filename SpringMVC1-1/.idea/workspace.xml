@@ -34,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet",
+    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet/SpringMVC1-1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +76,7 @@
       <workItem from="1704177327453" duration="136000" />
       <workItem from="1704177477477" duration="1600000" />
       <workItem from="1704179854982" duration="95000" />
+      <workItem from="1704180234121" duration="14000" />
     </task>
     <servers />
   </component>

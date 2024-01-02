@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd37903-1aef-4151-873f-81511b70b28a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SpringMVC1-1/test" beforeDir="false" />
-    </list>
+    <list default="true" id="7dd37903-1aef-4151-873f-81511b70b28a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +16,7 @@
     </projectState>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,18 +31,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet/springmvc1-1",
+    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet/SpringMVC1-1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\RJW\IdeaProjects\servlet\SpringMVC1-1" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ServletApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="servlet.main" />
+      <module name="hello.servlet.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="hello.servlet.ServletApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -60,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1704177326143</updated>
       <workItem from="1704177327453" duration="136000" />
-      <workItem from="1704177477477" duration="530000" />
+      <workItem from="1704177477477" duration="663000" />
+      <workItem from="1704178242236" duration="328000" />
     </task>
     <servers />
   </component>

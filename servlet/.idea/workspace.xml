@@ -65,7 +65,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "c7da4644b91607b9a17408a79fd1f2ad",
+    "spring.configuration.checksum": "ea068559da3478850118d6f62f3b73f4",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,6 +76,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\RJW\IdeaProjects\servlet\SpringMVC1-1" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ServletApplication">
     <configuration name="ServletApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -109,6 +116,7 @@
       <workItem from="1704177477477" duration="1600000" />
       <workItem from="1704179854982" duration="95000" />
       <workItem from="1704180234121" duration="14000" />
+      <workItem from="1704181119851" duration="510000" />
     </task>
     <servers />
   </component>

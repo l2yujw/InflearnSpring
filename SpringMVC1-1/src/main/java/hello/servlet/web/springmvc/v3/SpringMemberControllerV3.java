@@ -2,6 +2,7 @@ package hello.servlet.web.springmvc.v3;
 
 import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
+import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,10 +34,10 @@ public class SpringMemberControllerV3 {
     }
 
     @RequestMapping
-    public ModelAndView members() {
+    public String members(Model model) {
         List<Member> members = memberRepository.findAll();
-        ModelAndView mv = new ModelAndView("members");
-        mv.addObject("members", members);
-        return mv;
+
+        model.addAttribute("members", members);
+        return "members";
     }
 }

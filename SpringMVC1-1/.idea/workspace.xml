@@ -14,6 +14,9 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/SpringMVC1-1">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -31,13 +34,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet/SpringMVC1-1",
+    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/servlet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "c7da4644b91607b9a17408a79fd1f2ad",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,9 +49,16 @@
       <recent name="C:\Users\RJW\IdeaProjects\servlet\SpringMVC1-1" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="ServletApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.ServletApplication">
+    <configuration name="ServletApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="hello.servlet.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.servlet.ServletApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServletApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="servlet.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="hello.servlet.ServletApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,8 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1704177326143</updated>
       <workItem from="1704177327453" duration="136000" />
-      <workItem from="1704177477477" duration="663000" />
-      <workItem from="1704178242236" duration="328000" />
+      <workItem from="1704177477477" duration="1600000" />
+      <workItem from="1704179854982" duration="95000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd37903-1aef-4151-873f-81511b70b28a" name="Changes" comment="" />
+    <list default="true" id="7dd37903-1aef-4151-873f-81511b70b28a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../springmvc/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,13 +61,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/SpringMVC1/SpringMVC1-1",
+    "last_opened_file_path": "C:/Users/RJW/IdeaProjects/SpringMVC1/springmvc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "ea068559da3478850118d6f62f3b73f4",
+    "spring.configuration.checksum": "5eb0617239cf399a270db344e9836372",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,7 +95,7 @@
       </method>
     </configuration>
     <configuration name="ServletApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="SpringMVC1-1.servlet.main" />
+      <module name="SpringMVC1.servlet.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="hello.servlet.ServletApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,6 +119,8 @@
       <workItem from="1704179854982" duration="95000" />
       <workItem from="1704180234121" duration="14000" />
       <workItem from="1704181119851" duration="510000" />
+      <workItem from="1704191322425" duration="68000" />
+      <workItem from="1704191401075" duration="12000" />
     </task>
     <servers />
   </component>

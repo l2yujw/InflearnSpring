@@ -47,7 +47,7 @@ public class BasicController {
         model.addAttribute("users", list);
         model.addAttribute("userMap", map);
 
-        return "/basic/variable";
+        return "basic/variable";
     }
 
     @GetMapping("/basic-objects")
@@ -80,7 +80,7 @@ public class BasicController {
     @GetMapping("/literal")
     public String literal(Model model) {
         model.addAttribute("data", "Spring!");
-        return "/basic/literal";
+        return "basic/literal";
     }
 
     @GetMapping("/operation")
@@ -88,12 +88,12 @@ public class BasicController {
         model.addAttribute("nullData", null);
         model.addAttribute("data", "Spring!");
 
-        return "/basic/operation";
+        return "basic/operation";
     }
 
     @GetMapping("/attribute")
     public String attribute(Model model) {
-        return "/basic/attribute";
+        return "basic/attribute";
     }
 
     @GetMapping("/each")
@@ -116,6 +116,12 @@ public class BasicController {
     public String condition(Model model) {
         addUsers(model);
         return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
     }
 
     @Data

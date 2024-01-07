@@ -18,6 +18,6 @@ public class ItemSaveForm {
     private Integer price;
 
     @NotNull
-    @Max(value = 9999) //수정 요구사항 추가
+    @Max(value = 9999)
     private Integer quantity;
 }

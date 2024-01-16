@@ -6,6 +6,7 @@ import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -71,15 +72,16 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
             Map<String, Long> param = Map.of("id", id);
             Item item = template.queryForObject(sql, param, itemRowMapper());
             return Optional.of(item);
-        } catch (DataAccessException e) {
+        } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
     }
 
     @Override
     public List<Item> findAll(ItemSearchCond cond) {
-        String itemName = cond.getItemName();
+
         Integer maxPrice = cond.getMaxPrice();
+        String itemName = cond.getItemName();
 
         SqlParameterSource param = new BeanPropertySqlParameterSource(cond);
 

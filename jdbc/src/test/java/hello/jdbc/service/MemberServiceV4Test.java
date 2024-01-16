@@ -4,6 +4,7 @@ import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepository;
 import hello.jdbc.repository.MemberRepositoryV3;
 import hello.jdbc.repository.MemberRepositoryV4_1;
+import hello.jdbc.repository.MemberRepositoryV4_2;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
@@ -18,6 +19,7 @@ import org.springframework.context.annotation.Bean;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -49,7 +51,7 @@ class MemberServiceV4Test {
 
         @Bean
         MemberRepository memberRepository() {
-            return new MemberRepositoryV4_1(dataSource);
+            return new MemberRepositoryV4_2(dataSource);
         }
 
         @Bean
@@ -79,8 +81,8 @@ class MemberServiceV4Test {
     void AopCheck() {
         log.info("memberService class = {}", memberService.getClass());
         log.info("memberRepository class={}", memberRepository.getClass());
-        Assertions.assertThat(AopUtils.isAopProxy(memberService)).isTrue();
-        Assertions.assertThat(AopUtils.isAopProxy(memberRepository)).isFalse();
+        assertThat(AopUtils.isAopProxy(memberService)).isTrue();
+        assertThat(AopUtils.isAopProxy(memberRepository)).isFalse();
     }
 
     @Test

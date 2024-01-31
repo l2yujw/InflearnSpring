@@ -41,7 +41,7 @@ class MemberServiceTest {
     /**
      * memberService    @Transactional:OFF
      * memberRepository @Transactional:ON
-     * logRepository    @Transactional:ON
+     * logRepository    @Transactional:ON Exception
      */
     @Test
     void outerTxOff_fail() {
@@ -52,15 +52,15 @@ class MemberServiceTest {
         assertThatThrownBy(() -> memberService.joinV1(username))
                 .isInstanceOf(RuntimeException.class);
 
-        //then
+        //then //log 데이터는 롤백된다.
         assertTrue(memberRepository.find(username).isPresent());
         assertTrue(logRepository.find(username).isEmpty());
     }
 
     /**
-     * memberService    @Transactional:OFF
-     * memberRepository @Transactional:ON
-     * logRepository    @Transactional:ON
+     * memberService    @Transactional:ON
+     * memberRepository @Transactional:OFF
+     * logRepository    @Transactional:OFF
      */
     @Test
     void singleTx() {
@@ -76,7 +76,7 @@ class MemberServiceTest {
     }
 
     /**
-     * memberService    @Transactional:OFF
+     * memberService    @Transactional:ON
      * memberRepository @Transactional:ON
      * logRepository    @Transactional:ON
      */
@@ -91,5 +91,24 @@ class MemberServiceTest {
         //then
         assertTrue(memberRepository.find(username).isPresent());
         assertTrue(logRepository.find(username).isPresent());
+    }
+
+    /**
+     * memberService    @Transactional:ON
+     * memberRepository @Transactional:ON
+     * logRepository    @Transactional:ON Exception
+     */
+    @Test
+    void outerTxOn_fail() {
+        //given
+        String username = "로그예외_outerTxOn_fail";
+
+        //when
+        assertThatThrownBy(() -> memberService.joinV1(username))
+                .isInstanceOf(RuntimeException.class);
+
+        //then: 모든 데이터가 롤백된다.
+        assertTrue(memberRepository.find(username).isEmpty());
+        assertTrue(logRepository.find(username).isEmpty());
     }
 }

@@ -1,0 +1,5 @@
+* ctrl + r (command + r)
+    - 검색후 같은 패턴의 문자 대체가능
+
+* ctrl + shift + r (command + shift + r)
+    - 파일 단위로 대체 가능

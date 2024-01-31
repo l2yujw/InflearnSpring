@@ -1,0 +1,5 @@
+* ctrl + alt + shift + u(Mac: alt shitft command u)
+    - 인터페이스를 트리형식으로 보여줌
+
+* ctrl + n
+    - 필요 기능 검색

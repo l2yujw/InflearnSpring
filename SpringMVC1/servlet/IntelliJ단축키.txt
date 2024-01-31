@@ -1,0 +1,10 @@
+* Ctrl + alt + n (Command + Option + N)
+    - a = new b() return a 형식을 return new b()로 만들어줌
+
+* Ctrl + alt + click
+    - 해당 메서드의 구현체로 갈 수 있음
+
+* Ctrl + alt + m
+    - 메서드 추출
+
+test3

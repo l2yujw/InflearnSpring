@@ -72,12 +72,28 @@ public class JpaMain {
 
             System.out.println("====================");
 */
+/*
             Member member = new Member(200L, "member200");
             em.persist(member);
 
             em.flush();
 
             System.out.println("======================");
+*/
+
+/*
+            //영속
+            Member member = em.find(Member.class, 150L);
+            member.setName("AAAAA");
+
+            em.detach(member);
+
+            System.out.println("====================");
+*/
+            Member member = new Member();
+            member.setId(2L);
+            member.setUsername("BBB");
+            member.setRoleType(RoleType.ADMIN);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();

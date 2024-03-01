@@ -29,7 +29,7 @@ public class JpaMain {
             System.out.println("findMember = " + findMember.getName());
 */
 
-            List<Member> result = em.createQuery("select m from Member m", Member.class)
+/*            List<Member> result = em.createQuery("select m from Member m", Member.class)
                     .setFirstResult(5)
                     .setMaxResults(8)
                     .getResultList();
@@ -38,7 +38,46 @@ public class JpaMain {
                 System.out.println("member.name = " + member.getName());
 
             }
+*/
+/*            //비영속
+            Member member = new Member();
+            member.setId(101L);
+            member.setName("HelloA");
 
+            //영속
+            System.out.println("=== BEFORE ===");
+            em.persist(member);
+            System.out.println("=== AFTER ===");
+
+            Member findMember1 = em.find(Member.class, 101L);
+            System.out.println("findMember.getId() = " + findMember1.getId());
+            System.out.println("findMember.getName() = " + findMember1.getName());
+
+            Member findMember2 = em.find(Member.class, 101L);
+            System.out.println("result = " + (findMember1 == findMember2));*/
+
+/*
+            //영속
+            Member member1 = new Member(150L, "A");
+            Member member2 = new Member(160L, "B");
+
+            em.persist(member1);
+            em.persist(member2);
+
+            System.out.println("====================");
+*/
+/*
+            Member member = em.find(Member.class, 150L);
+            member.setName("ZZZZZ");
+
+            System.out.println("====================");
+*/
+            Member member = new Member(200L, "member200");
+            em.persist(member);
+
+            em.flush();
+
+            System.out.println("======================");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();

@@ -96,10 +96,32 @@ public class JpaMain {
             member.setUsername("BBB");
             member.setRoleType(RoleType.ADMIN);
 */
+/*
             Member member = new Member();
             member.setUsername("Cc");
 
             em.persist(member);
+*/
+            //저장
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            List<Member> members = findMember.getTeam().getMembers();
+
+            for (Member m : members) {
+                System.out.println("m.getUsername() = " + m.getUsername());
+            }
+
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam.getName() = " + findTeam.getName());
+
 
             tx.commit();
         } catch (Exception e) {

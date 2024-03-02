@@ -11,8 +11,7 @@ import jakarta.persistence.*;
         pkColumnValue = "MEMBER_SEQ", allocationSize = 1)*/
 public class Member {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
 //    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR")
     private Long id;
@@ -24,9 +23,15 @@ public class Member {
         @Column(name = "TEAM_ID")
         private Long teamId;
     */
+
     @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     private Team team;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
 
 /*
     private Integer age;
@@ -66,12 +71,12 @@ public class Member {
         this.username = username;
     }
 
-    public Team getTeam() {
+/*    public Team getTeam() {
         return team;
     }
 
     public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);
-    }
+    }*/
 }

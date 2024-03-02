@@ -2,6 +2,9 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 /*@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq",
         initialValue = 1, allocationSize = 50)*/
@@ -32,6 +35,8 @@ public class Member {
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
+    @OneToMany(mappedBy = "member")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
 /*
     private Integer age;

@@ -90,10 +90,17 @@ public class JpaMain {
 
             System.out.println("====================");
 */
+/*
             Member member = new Member();
             member.setId(2L);
             member.setUsername("BBB");
             member.setRoleType(RoleType.ADMIN);
+*/
+            Member member = new Member();
+            member.setUsername("Cc");
+
+            em.persist(member);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();

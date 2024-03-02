@@ -7,14 +7,23 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
+@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq",
+        initialValue = 1, allocationSize = 50)
+/*@TableGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        table = "MY_SEQUENCES",
+        pkColumnValue = "MEMBER_SEQ", allocationSize = 1)*/
 public class Member {
 
     @Id
+//    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(name = "name", nullable = false)
     private String username;
 
+/*
     private Integer age;
 
     @Enumerated(EnumType.STRING)
@@ -31,6 +40,7 @@ public class Member {
 
     @Lob
     private String description;
+*/
 
     public Member() {
     }
@@ -49,13 +59,5 @@ public class Member {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
     }
 }

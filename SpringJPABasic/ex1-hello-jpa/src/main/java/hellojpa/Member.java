@@ -2,10 +2,6 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 @Entity
 /*@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq",
         initialValue = 1, allocationSize = 50)*/
@@ -74,7 +70,8 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void changeTeam(Team team) {
         this.team = team;
+        team.getMembers().add(this);
     }
 }

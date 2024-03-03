@@ -76,12 +76,12 @@ public class Member extends BaseEntity{
         this.username = username;
     }
 
-/*    public Team getTeam() {
+    public Team getTeam() {
         return team;
     }
 
     public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);
-    }*/
+    }
 }

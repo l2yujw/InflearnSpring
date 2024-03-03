@@ -152,24 +152,35 @@ public class JpaMain {
             Movie findMovie = em.find(Movie.class, movie.getId());
             System.out.println("findMovie = " + findMovie);
 */
+/*
+            Team team = new Team();
+            team.setName("asdf");
+            em.persist(team);
 
             Member member1 = new Member();
             member1.setUsername("member1");
+            member1.setTeam(team);
             em.persist(member1);
-
-            Member member2 = new Member();
-            member2.setUsername("member2");
-            em.persist(member2);
 
             em.flush();
             em.clear();
 
-            Member m1 = em.find(Member.class, member1.getId());
-            Member m2 = em.find(Member.class, member2.getId());
+            Member m = em.find(Member.class, member1.getId());
 
-            System.out.println("m1 == m2: " + (m1 instanceof Member));
-            System.out.println("m1 == m2: " + (m2 instanceof Member));
-//            Member findMember = em.find(Member.class, member.getId());
+            System.out.println("m.getTeam().getClass() = " + m.getTeam().getClass());
+
+            System.out.println("==========");
+            m.getTeam().getName();
+            System.out.println("==========");
+*/
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            em.persist(parent);
 
             tx.commit();
         } catch (Exception e) {

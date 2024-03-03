@@ -173,6 +173,7 @@ public class JpaMain {
             m.getTeam().getName();
             System.out.println("==========");
 */
+/*
             Child child1 = new Child();
             Child child2 = new Child();
 
@@ -181,6 +182,14 @@ public class JpaMain {
             parent.addChild(child2);
 
             em.persist(parent);
+
+            em.flush();
+            em.clear();
+
+            Parent findParent = em.find(Parent.class, parent.getId());
+            em.remove(findParent);
+*/
+
 
             tx.commit();
         } catch (Exception e) {

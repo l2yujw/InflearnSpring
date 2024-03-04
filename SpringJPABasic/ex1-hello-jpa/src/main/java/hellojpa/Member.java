@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 /*@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq",
@@ -33,6 +35,24 @@ public class Member extends BaseEntity{
         @Column(name = "TEAM_ID")
         private Long teamId;
     */
+
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOOD", joinColumns =
+        @JoinColumn(name = "MEMBER_ID")
+    )
+    @Column(name = "FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<>();
+
+    /*
+        @ElementCollection
+        @CollectionTable(name = "ADDRESS", joinColumns =
+                @JoinColumn(name = "MEMBER_ID")
+        )
+        private List<Address> addressesHistory = new ArrayList<>();
+    */
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "MEMBER_ID")
+    private List<AddressEntity> addressHistory = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
@@ -94,5 +114,13 @@ public class Member extends BaseEntity{
     public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);
+    }
+
+    public List<AddressEntity> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<AddressEntity> addressHistory) {
+        this.addressHistory = addressHistory;
     }
 }

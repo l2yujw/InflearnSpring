@@ -1,4 +1,4 @@
-package jpabook.jpashop.domain.Item;
+package jpabook.jpashop.domain.item;
 
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.Category;
@@ -27,8 +27,7 @@ public abstract class Item {
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
-    //==비즈니스 로직 ==//
-
+    //==비즈니스 로직==//
     /**
      * stock 증가
      */
@@ -36,15 +35,8 @@ public abstract class Item {
         this.stockQuantity += quantity;
     }
 
-    public void change(String name, int price, int stockQuantity) {
-        this.name = name;
-        this.price = price;
-        this.stockQuantity = stockQuantity;
-    }
-
     /**
      * stock 감소
-     * @param quantity
      */
     public void removeStock(int quantity) {
         int restStock = this.stockQuantity - quantity;

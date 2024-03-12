@@ -24,19 +24,18 @@ import static org.springframework.util.StringUtils.hasText;
 import static study.querydsl.entity.QMember.member;
 import static study.querydsl.entity.QTeam.team;
 
-public class MemberRepositoryImpl extends QuerydslRepositorySupport implements MemberRepositoryCustom{
+public class MemberRepositoryImpl implements MemberRepositoryCustom{
 
     private final JPAQueryFactory queryFactory;
 
     public MemberRepositoryImpl(EntityManager em) {
-        super(Member.class);
         this.queryFactory = new JPAQueryFactory(em);
     }
 
     @Override
     public List<MemberTeamDto> search(MemberSearchCondition condition) {
 
-        Collection<MemberTeamDto> result = from(member)
+/*        Collection<MemberTeamDto> result = from(member)
                 .leftJoin(member.team, team)
                 .where(
                         usernameEq(condition.getUsername()),
@@ -51,7 +50,7 @@ public class MemberRepositoryImpl extends QuerydslRepositorySupport implements M
                         team.id.as("teamId"),
                         team.name.as("teamName")
                 ))
-                .fetch();
+                .fetch();*/
 
         return queryFactory
                 .select(new QMemberTeamDto(
